@@ -1,7 +1,7 @@
 # Telegram Bot Template
 This template provides clean start to create bot using aiogram.
 
-## Libraries
+## Stack
 - Aiogram
 - Aiogram Dialog
 - Dishka
