@@ -1,0 +1,24 @@
+[project]
+name = "bot_template"
+version = "0.1.0"
+description = "This template provides clean start to create bot using aiogram."
+authors = [
+    {name = "Author Name", email = "arturboyun@gmail.com"},
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiogram-dialog>=2.2.0",
+    "aiogram>=3.13.1",
+    "alembic>=1.13.3",
+    "asyncpg>=0.30.0",
+    "pydantic-settings>=2.6.0",
+    "redis>=5.2.0",
+    "ruff>=0.7.1",
+    "sqlalchemy>=2.0.36",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.7.1",
+]
