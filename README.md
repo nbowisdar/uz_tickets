@@ -6,7 +6,8 @@ This template provides clean start to create bot using aiogram.
 - Aiogram Dialog
 - Dishka
 - Pydantic
-- ~~FastAPI~~ (To Do)
+- ~~FastAPI~~ (TODO)
+- ~~I18n~~ (TODO)
 - SQLAlchemy + asyncpg
 - Alembic
 - UV
