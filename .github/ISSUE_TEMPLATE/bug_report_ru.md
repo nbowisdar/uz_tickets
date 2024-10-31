@@ -1,5 +1,5 @@
 ---
-name: Отчет о баге
+name: Bug report [RU]
 about: Создайте отчет, чтобы помочь нам улучшиться
 title: ''
 labels: ''
