@@ -2,6 +2,8 @@ services:
   db:
     ports:
       - 5432:5432
+    environment:
+      - DEBUG=True
 
   redis:
     ports:

@@ -16,7 +16,7 @@ class Config(BaseSettings):
     ADMIN_IDS: list[int] = [
         123123,
     ]
-    DEBUG: bool = True
+    DEBUG: bool = False
 
     # Postgres
     POSTGRES_DSN: PostgresDsn
