@@ -3,7 +3,7 @@ services:
     build:
       context: .
     env_file:
-      - .env.stage
+      - .env
     volumes:
       - ./bot:/app/bot
     depends_on:

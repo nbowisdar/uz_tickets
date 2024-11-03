@@ -10,9 +10,12 @@ from aiogram.fsm.storage.base import DefaultKeyBuilder
 from aiogram.fsm.storage.redis import RedisStorage
 from aiogram.types import Message
 from aiogram_dialog import AccessSettings, DialogManager, StartMode, setup_dialogs
+from dishka import make_async_container
+from dishka.integrations.aiogram import setup_dishka
 
 from bot.dialogs.menu.dialog import menu_dialog
 from bot.config import get_config
+from bot.ioc import DepsProvider
 from bot.states import Menu
 
 config = get_config()
@@ -61,7 +64,8 @@ async def main():
         token=config.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML)
     )
     dp.include_router(main_router)
-
+    container = make_async_container(DepsProvider())
+    setup_dishka(container=container, router=dp)
     register_dialogs(dp)
     setup_dialogs(dp)
     await dp.start_polling(bot, skip_updates=True)

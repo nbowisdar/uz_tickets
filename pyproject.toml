@@ -12,6 +12,7 @@ dependencies = [
     "aiogram>=3.13.1",
     "alembic>=1.13.3",
     "asyncpg>=0.30.0",
+    "dishka>=1.4.0",
     "pydantic-settings>=2.6.0",
     "redis>=5.2.0",
     "ruff>=0.7.1",
