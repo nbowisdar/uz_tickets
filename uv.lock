@@ -178,6 +178,7 @@ dependencies = [
     { name = "aiogram-dialog" },
     { name = "alembic" },
     { name = "asyncpg" },
+    { name = "dishka" },
     { name = "pydantic-settings" },
     { name = "redis" },
     { name = "ruff" },
@@ -195,6 +196,7 @@ requires-dist = [
     { name = "aiogram-dialog", specifier = ">=2.2.0" },
     { name = "alembic", specifier = ">=1.13.3" },
     { name = "asyncpg", specifier = ">=0.30.0" },
+    { name = "dishka", specifier = ">=1.4.0" },
     { name = "pydantic-settings", specifier = ">=2.6.0" },
     { name = "redis", specifier = ">=5.2.0" },
     { name = "ruff", specifier = ">=0.7.1" },
@@ -220,6 +222,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/b0/ee/9b19140fe824b367c04c5e1b369942dd754c4c5462d5674002f75c4dedc1/certifi-2024.8.30.tar.gz", hash = "sha256:bec941d2aa8195e248a60b31ff9f0558284cf01a52591ceda73ea9afffd69fd9", size = 168507 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/12/90/3c9ff0512038035f59d279fddeb79f5f1eccd8859f06d6163c58798b9487/certifi-2024.8.30-py3-none-any.whl", hash = "sha256:922820b53db7a7257ffbda3f597266d435245903d80737e34f8a45ff3e3230d8", size = 167321 },
+]
+
+[[package]]
+name = "dishka"
+version = "1.4.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/4d/f8/edcf6403b7ae9ea97b54c204e38f7764671fe1335b8e3ab6abb3a0dc245a/dishka-1.4.0.tar.gz", hash = "sha256:8e2c763df45825a10548b9341778cdb70481a97b67ce0de1c3c794cd61948476", size = 56853 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/26/80/5541a15819653065a232423a368e2396591949ed16e5181d64b4c254d0ac/dishka-1.4.0-py3-none-any.whl", hash = "sha256:7bc2940af9967a0230d13b8e57df7bf67b8c663df44701b70f288232b4bbe3bd", size = 79331 },
 ]
 
 [[package]]

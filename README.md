@@ -24,7 +24,7 @@ This template provides clean start to create bot using aiogram.
 4. Run migrations with `docker compose exec -it db uv run alembic upgrade head`
 
 ## Setup for local start
-1. Create `.env.docker` file from `.env.dist` and fill it.
+1. Create `.env` file from `.env.dist` and fill it.
 2. Create `password.txt` in `db` folder and fill it.
 3. Run `docker compose up --build -d db redis`
 4. Install dependencies with `uv sync`

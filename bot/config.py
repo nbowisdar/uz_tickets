@@ -17,6 +17,9 @@ class Config(BaseSettings):
         123123,
     ]
     DEBUG: bool = False
+    MEDIA_GROUP_TIMEOUT: int = 1
+    MAIN_CHANNEL_ID: int = -1002364057221
+    CHILD_CHANNEL_IDS: list[str] = ["-1002174716776", "-1002288010761"]
 
     # Postgres
     POSTGRES_DSN: PostgresDsn

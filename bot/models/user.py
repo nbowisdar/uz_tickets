@@ -1,9 +1,8 @@
 from typing import Annotated
 from sqlalchemy import BigInteger
 from sqlalchemy.orm import Mapped, mapped_column
-from bot.models.base import Base, uuid_pk
-
-chat_id_bigint = Annotated[int, mapped_column(BigInteger(), unique=True)]
+from bot.models.base import Base
+from bot.models.fields import uuid_pk, chat_id_bigint
 
 
 class User(Base):

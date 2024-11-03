@@ -18,17 +18,6 @@ metadata = MetaData(naming_convention=POSTGRES_INDEXES_NAMING_CONVENTION)
 DeclarativeBase = declarative_base(metadata=metadata)
 
 
-uuid_pk = Annotated[
-    uuid.UUID,
-    mapped_column(
-        UUID(as_uuid=True),
-        primary_key=True,
-        unique=True,
-        server_default=text("gen_random_uuid()"),
-    ),
-]
-
-
 class Base(AsyncAttrs, DeclarativeBase):
     """Base class for all models."""
 
