@@ -28,5 +28,5 @@ jobs:
         ssh -o StrictHostKeyChecking=no $USER@$HOST "
           cd $BOT_PATH && \
           git pull origin main && \
-          docker compose up --build -d
+          docker compose -f compose.yml -f compose.prod.yml up --build -d
         "
