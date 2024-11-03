@@ -1,7 +1,7 @@
-# Telegram Bot Template
+# 📋 Telegram Bot Template
 This template provides clean start to create bot using aiogram.
 
-## Stack
+## 🛠 Stack
 - Aiogram
 - Aiogram Dialog
 - Dishka
@@ -17,13 +17,13 @@ This template provides clean start to create bot using aiogram.
 - Redis
 
 
-## Setup with Docker
+## 🐳 Setup with Docker
 1. Create `.env` file from `.env.dist` and fill it.
 2. Create `password.txt` in `db` folder and fill it.
 3. Run docker `docker compose up --build -d`
 4. Run migrations with `docker compose exec -it db uv run alembic upgrade head`
 
-## Setup for local start
+## 🐇 Setup for local start
 1. Create `.env` file from `.env.dist` and fill it.
 2. Create `password.txt` in `db` folder and fill it.
 3. Run `docker compose up --build -d db redis`
@@ -33,7 +33,7 @@ This template provides clean start to create bot using aiogram.
 7. Run migrations with `alembic upgrade head`
 8. Run bot with `python -m bot.main`
 
-## For production
+## 🍀 For production
 `docker compose -f compose.yml -f compose.prod.yml up --build -d`
 
 ## How To?
