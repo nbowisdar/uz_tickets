@@ -18,7 +18,7 @@ This template provides clean start to create bot using aiogram.
 
 
 ## Setup with Docker
-1. Create `.env.docker` file from `.env.dist` and fill it.
+1. Create `.env` file from `.env.dist` and fill it.
 2. Create `password.txt` in `db` folder and fill it.
 3. Run docker `docker compose up --build -d`
 4. Run migrations with `docker compose exec -it db uv run alembic upgrade head`
