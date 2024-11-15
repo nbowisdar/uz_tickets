@@ -17,6 +17,7 @@ class Config(BaseSettings):
         123123,
     ]
     DEBUG: bool = False
+    USE_WEBHOOK: bool = False
     BOT_SECRET_TOKEN: str | None = None
 
     # API
@@ -35,8 +36,6 @@ class Config(BaseSettings):
     POSTGRES_DSN: PostgresDsn
     # Redis
     REDIS_DSN: RedisDsn
-    # RabbitMQ
-    RABBITMQ_DSN: str
 
     @property
     def WEBHOOK_PATH(self) -> str:

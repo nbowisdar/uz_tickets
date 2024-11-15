@@ -1,6 +1,5 @@
 import asyncio
 import logging
-import sys
 
 from aiogram import Bot, Dispatcher, Router
 from aiogram.client.default import DefaultBotProperties
@@ -63,14 +62,10 @@ async def photo_id(message: Message):
     )
 
 
-async def main():
+async def start_pooling():
     dp.include_router(main_router)
     container = make_async_container(DepsProvider())
     setup_dishka(container=container, router=dp)
     register_dialogs(dp)
     setup_dialogs(dp)
     await dp.start_polling(bot, skip_updates=True)
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
