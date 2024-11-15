@@ -9,7 +9,7 @@ ENV_FILE_NAME = ".env"
 
 @final
 class Config(BaseSettings):
-    model_config: SettingsConfigDict = SettingsConfigDict(env_file=ENV_FILE_NAME)
+    model_config = SettingsConfigDict(env_file=ENV_FILE_NAME)
 
     # Bot
     BOT_TOKEN: str
@@ -17,18 +17,35 @@ class Config(BaseSettings):
         123123,
     ]
     DEBUG: bool = False
-    MEDIA_GROUP_TIMEOUT: int = 1
-    MAIN_CHANNEL_ID: int = -1002364057221
-    CHILD_CHANNEL_IDS: list[str] = ["-1002174716776", "-1002288010761"]
+    USE_WEBHOOK: bool = False
+    BOT_SECRET_TOKEN: str | None = None
+
+    # API
+    API_NAME: str = "Telegram Bot API"
+    API_V1_STR: str = "/api/v1"
+    API_HOST: str
+    API_PORT: int | None = None
+    ORIGINS: list[str] = [
+        "http://bot.arturboyun.com",
+        "https://bot.arturboyun.com",
+        "http://localhost",
+        "http://localhost:8000",
+    ]
 
     # Postgres
     POSTGRES_DSN: PostgresDsn
     # Redis
     REDIS_DSN: RedisDsn
-    # RabbitMQ
-    RABBITMQ_DSN: str
+
+    @property
+    def WEBHOOK_PATH(self) -> str:
+        return f"{self.API_V1_STR}/webhook"
+
+    @property
+    def WEBHOOK_URL(self) -> str:
+        return f"{self.API_HOST}{self.WEBHOOK_PATH}"
 
 
 @lru_cache
 def get_config() -> Config:
-    return Config()
+    return Config()  # type: ignore

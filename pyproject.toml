@@ -13,6 +13,7 @@ dependencies = [
     "alembic>=1.13.3",
     "asyncpg>=0.30.0",
     "dishka>=1.4.0",
+    "fastapi[standard]>=0.115.5",
     "pydantic-settings>=2.6.0",
     "redis>=5.2.0",
     "ruff>=0.7.1",
