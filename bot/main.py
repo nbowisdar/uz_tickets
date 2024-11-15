@@ -17,17 +17,21 @@ from bot.dialogs.menu.dialog import menu_dialog
 from bot.config import get_config
 from bot.ioc import DepsProvider
 from bot.states import Menu
+from bot.utils import setup_logging
 
 config = get_config()
+setup_logging(config)
+logger = logging.getLogger(__name__)
 
-logging_level = logging.DEBUG if config.DEBUG else logging.INFO
-logging.basicConfig(level=logging_level, stream=sys.stdout)
-logger = logging.getLogger("MAIN")
-
+# Dispatcher
 key_builder = DefaultKeyBuilder(with_destiny=True)
 storage = RedisStorage.from_url(str(config.REDIS_DSN), key_builder=key_builder)
 dp = Dispatcher(storage=storage)
 main_router = Router()
+
+# Bot
+default_bot_properties = DefaultBotProperties(parse_mode=ParseMode.HTML)
+bot = Bot(token=config.BOT_TOKEN, default=default_bot_properties)
 
 
 def register_dialogs(router: Router):
@@ -60,9 +64,6 @@ async def photo_id(message: Message):
 
 
 async def main():
-    bot = Bot(
-        token=config.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML)
-    )
     dp.include_router(main_router)
     container = make_async_container(DepsProvider())
     setup_dishka(container=container, router=dp)
