@@ -17,7 +17,7 @@ class Config(BaseSettings):
         123123,
     ]
     DEBUG: bool = False
-    BOT_SECRET_TOKEN: str = "bot_secret_token"
+    BOT_SECRET_TOKEN: str | None = None
 
     # API
     API_NAME: str = "Telegram Bot API"
