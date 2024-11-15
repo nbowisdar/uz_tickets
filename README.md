@@ -6,7 +6,7 @@ This template provides clean start to create bot using aiogram.
 - Aiogram Dialog
 - Dishka
 - Pydantic
-- ~~FastAPI~~ (TODO)
+- FastAPI
 - ~~I18n~~ (TODO)
 - SQLAlchemy + asyncpg
 - Alembic
@@ -33,7 +33,7 @@ This template provides clean start to create bot using aiogram.
 7. Run migrations with `alembic upgrade head`
 8. Run bot with `python -m bot`
 
-## Start with webhook
+## 📎Start with webhook
 1. Set USE_WEBHOOK to True in .env
 2. Update BOT_SECRET_TOKEN
 3. Set API_HOST to your domain
