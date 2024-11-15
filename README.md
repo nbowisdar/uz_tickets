@@ -34,10 +34,10 @@ This template provides clean start to create bot using aiogram.
 8. Run bot with `python -m bot`
 
 ## 📎Start with webhook
-1. Set USE_WEBHOOK to True in .env
-2. Update BOT_SECRET_TOKEN
-3. Set API_HOST to your domain
-4. Update ORIGINS in .env
+1. Set `USE_WEBHOOK` to True in .env
+2. Update `BOT_SECRET_TOKEN`
+3. Set `API_HOST` to your domain
+4. Update `ORIGINS` in `.env`
 5. Start bot with `python -m bot`
 
 ## 🍀 For production
@@ -54,3 +54,12 @@ alembic upgrade head
 ```shell
 alembic revision --autogenerate -m="<migration_name>"
 ```
+
+### Generate Secret Keys
+Some environment variables in the .env file have a default value of changethis.
+
+You have to change them with a secret key, to generate secret keys you can run the following command:
+```shell
+python -c "import secrets; print(secrets.token_urlsafe(32))"
+```
+
