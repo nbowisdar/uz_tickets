@@ -1,16 +1,23 @@
-from bot.config import get_config
+import asyncio
+import logging
 
+import uvicorn
+
+from api import app
+from bot.config import get_config
+from bot.main import start_pooling
+from bot.utils import setup_logging
 
 config = get_config()
+setup_logging(config)
+logger = logging.getLogger(__name__)
 
 if __name__ == "__main__":
     if config.USE_WEBHOOK:
-        import uvicorn
-        from api.main import app
+        logger.info("Starting webhook server")
 
-        uvicorn.run(app, host=config.API_HOST, port=config.API_PORT)
+        uvicorn.run(app, host="0.0.0.0", port=8000)
     else:
-        import asyncio
-        from bot.main import start_pooling
+        logger.info("Starting bot polling")
 
         asyncio.run(start_pooling())

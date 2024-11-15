@@ -24,7 +24,7 @@ class Config(BaseSettings):
     API_NAME: str = "Telegram Bot API"
     API_V1_STR: str = "/api/v1"
     API_HOST: str
-    API_PORT: int = 8000
+    API_PORT: int | None = None
     ORIGINS: list[str] = [
         "http://bot.arturboyun.com",
         "https://bot.arturboyun.com",
@@ -43,7 +43,7 @@ class Config(BaseSettings):
 
     @property
     def WEBHOOK_URL(self) -> str:
-        return f"{self.API_HOST}:{self.API_PORT}{self.WEBHOOK_PATH}"
+        return f"{self.API_HOST}{self.WEBHOOK_PATH}"
 
 
 @lru_cache
