@@ -23,4 +23,4 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen
 
 # Run the application.
-ENTRYPOINT ["uv", "run", "python", "-m", "bot.main"]
+ENTRYPOINT ["uv", "run", "python", "-m", "bot"]

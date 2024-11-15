@@ -31,7 +31,14 @@ This template provides clean start to create bot using aiogram.
 5. Create `.venv` with `uv venv --seed`
 6. Activate virtual environment with `source .venv/bin/activate`
 7. Run migrations with `alembic upgrade head`
-8. Run bot with `python -m bot.main`
+8. Run bot with `python -m bot`
+
+## Start with webhook
+1. Set USE_WEBHOOK to True in .env
+2. Update BOT_SECRET_TOKEN
+3. Set API_HOST to your domain
+4. Update ORIGINS in .env
+5. Start bot with `python -m bot`
 
 ## 🍀 For production
 `docker compose -f compose.yml -f compose.prod.yml up --build -d`
