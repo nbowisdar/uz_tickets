@@ -9,6 +9,7 @@ This template provides clean start to create bot using aiogram.
 - FastAPI
 - ~~I18n~~ (TODO)
 - ~~Base of Clean Architecture~~ (TODO)
+- ~~Ngrok for local dev~~ (TODO)
 - SQLAlchemy + asyncpg
 - Alembic
 - UV
