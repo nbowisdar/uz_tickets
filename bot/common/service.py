@@ -1,11 +1,11 @@
 import logging
 from typing import Generic, Iterable, Sequence, TypeVar
+
 from sqlalchemy import Select, UnaryExpression, asc, desc, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql.base import ExecutableOption
 
 from bot.models.base import Base
-
 
 logger = logging.getLogger("Service")
 TModel = TypeVar("TModel", bound=type[Base])
@@ -19,7 +19,7 @@ class Service(Generic[TModel]):
         self,
         *filters,
         limit: int | None = 1000,
-        offset: int = None,
+        offset: int | None = None,
         options: Iterable[ExecutableOption] | ExecutableOption | None = None,
         stmt: Select | None = None,
         **filters_by,
