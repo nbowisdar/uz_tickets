@@ -1,16 +1,16 @@
 import logging
 
 from aiogram import Bot, Dispatcher, Router
-from aiogram.filters import Command, CommandStart
-from aiogram.types import Message
+from aiogram.types import ErrorEvent
 from aiogram_dialog import AccessSettings, DialogManager, StartMode, setup_dialogs
 from dishka import make_async_container
 from dishka.integrations.aiogram import setup_dishka
 
-from bot.misc import dp, bot
-from bot.dialogs.menu.dialog import menu_dialog
 from bot.config import get_config
+from bot.dialogs.menu.dialog import menu_dialog
+from bot.handlers.commands import commands_router
 from bot.ioc import DepsProvider
+from bot.misc import bot, dp
 from bot.states import Menu
 from bot.utils import setup_logging
 
@@ -25,39 +25,18 @@ def register_dialogs(router: Router):
     """
     Register all dialogs in the router
     """
+    router.include_router(commands_router)
     router.include_router(menu_dialog)
 
 
-@main_router.message(CommandStart())
-async def command_start_handler(
-    message: Message, dialog_manager: DialogManager
-) -> None:
-    logger.info(f"Command /start from {message.from_user.id}")  # type: ignore
+@main_router.error()
+async def error_handler(event: ErrorEvent, dialog_manager: DialogManager):
+    logger.error("Error occurred: %s", event.exception, exc_info=event.exception)
     await dialog_manager.start(
         Menu.main,
         mode=StartMode.RESET_STACK,
         access_settings=AccessSettings(config.ADMIN_IDS),
     )
-
-
-@main_router.message(Command("photo_id"))
-async def photo_id(message: Message):
-    if not message.reply_to_message:
-        return await message.answer("Reply to a photo message with this command.")
-    logger.info(f"Command /photo_id from {message.from_user.id}")  # type: ignore
-    await message.answer(
-        f"Photo id: <code>{message.reply_to_message.photo[-1].file_id}</code>"  # type: ignore
-    )
-
-
-# @main_router.error()
-# async def error_handler(event: ErrorEvent, dialog_manager: DialogManager):
-#     logger.error("Error occurred: %s", event.exception, exc_info=event.exception)
-#     await dialog_manager.start(
-#         Menu.main,
-#         mode=StartMode.RESET_STACK,
-#         access_settings=AccessSettings(config.ADMIN_IDS),
-#     )
 
 
 async def setup_dispatcher(dp: Dispatcher):
