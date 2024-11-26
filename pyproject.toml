@@ -17,7 +17,7 @@ dependencies = [
     "pydantic-settings>=2.6.0",
     "redis>=5.2.0",
     "ruff>=0.7.1",
-    "sqlalchemy>=2.0.36",
+    "sqlalchemy[asyncio]>=2.0.36",
 ]
 
 [tool.uv]
