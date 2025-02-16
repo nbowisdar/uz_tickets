@@ -54,7 +54,7 @@ alembic upgrade head
 
 ### Generate new migration
 ```shell
-alembic revision --autogenerate -m="<migration_name>"
+alembic revision --autogenerate -m "<migration_name>"
 ```
 
 ### Generate Secret Keys
