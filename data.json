@@ -1,0 +1,393 @@
+{
+    "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+    "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+    "direct": [
+        {
+            "id": 1164204,
+            "depart_at": 1747422060,
+            "arrive_at": 1747448880,
+            "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+            "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+            "stations_time_offset": 0,
+            "train": {
+                "id": 130,
+                "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+                "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+                "number": "038\u041a",
+                "type": 0,
+                "wagon_classes": [
+                    {
+                        "id": "\u041a",
+                        "name": "\u041a\u0443\u043f\u0435",
+                        "free_seats": 0,
+                        "price": 0,
+                        "amenities": [
+                            "not_near_wc",
+                            "lower_places"
+                        ]
+                    },
+                    {
+                        "id": "\u041b",
+                        "name": "\u041b\u044e\u043a\u0441",
+                        "free_seats": 0,
+                        "price": 0,
+                        "amenities": [
+                            "not_near_wc"
+                        ]
+                    }
+                ],
+                "info_popup": null
+            },
+            "discount": null,
+            "custom_tag": null,
+            "monitoring": {
+                "allowed": false,
+                "auto_purchase": false
+            },
+            "is_departed": false
+        },
+        {
+            "id": 1164205,
+            "depart_at": 1747422540,
+            "arrive_at": 1747450200,
+            "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+            "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+            "stations_time_offset": 0,
+            "train": {
+                "id": 131,
+                "station_from": "\u041b\u044c\u0432\u0456\u0432",
+                "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+                "number": "080\u041b",
+                "type": 0,
+                "wagon_classes": [
+                    {
+                        "id": "\u041a",
+                        "name": "\u041a\u0443\u043f\u0435",
+                        "free_seats": 0,
+                        "price": 0,
+                        "amenities": [
+                            "not_near_wc",
+                            "lower_places"
+                        ]
+                    },
+                    {
+                        "id": "\u041b",
+                        "name": "\u041b\u044e\u043a\u0441",
+                        "free_seats": 0,
+                        "price": 0,
+                        "amenities": [
+                            "not_near_wc"
+                        ]
+                    }
+                ],
+                "info_popup": null
+            },
+            "discount": null,
+            "custom_tag": {
+                "value": "\u0424\u043b\u0430\u0433\u043c\u0430\u043d\u0441\u044c\u043a\u0438\u0439",
+                "color": "#B033BB"
+            },
+            "monitoring": {
+                "allowed": false,
+                "auto_purchase": false
+            },
+            "is_departed": false
+        },
+        {
+            "id": 1164206,
+            "depart_at": 1747426500,
+            "arrive_at": 1747453620,
+            "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+            "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+            "stations_time_offset": 0,
+            "train": {
+                "id": 132,
+                "station_from": "\u0425\u0435\u043b\u043c",
+                "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+                "number": "120\u0414",
+                "type": 0,
+                "wagon_classes": [
+                    {
+                        "id": "\u041f",
+                        "name": "\u041f\u043b\u0430\u0446\u043a\u0430\u0440\u0442",
+                        "free_seats": 0,
+                        "price": 0,
+                        "amenities": [
+                            "not_near_wc",
+                            "lower_places",
+                            "not_side_seats"
+                        ]
+                    },
+                    {
+                        "id": "\u041a",
+                        "name": "\u041a\u0443\u043f\u0435",
+                        "free_seats": 0,
+                        "price": 62757,
+                        "amenities": [
+                            "not_near_wc",
+                            "lower_places"
+                        ]
+                    },
+                    {
+                        "id": "\u041b",
+                        "name": "\u041b\u044e\u043a\u0441",
+                        "free_seats": 0,
+                        "price": 0,
+                        "amenities": [
+                            "not_near_wc"
+                        ]
+                    }
+                ],
+                "info_popup": null
+            },
+            "discount": null,
+            "custom_tag": null,
+            "monitoring": {
+                "allowed": false,
+                "auto_purchase": false
+            },
+            "is_departed": false
+        },
+        {
+            "id": 1164208,
+            "depart_at": 1747401420,
+            "arrive_at": 1747423080,
+            "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+            "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+            "stations_time_offset": 0,
+            "train": {
+                "id": 135,
+                "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+                "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+                "number": "734\u041a",
+                "type": 2,
+                "wagon_classes": [
+                    {
+                        "id": "\u04211",
+                        "name": "1 \u043a\u043b\u0430\u0441",
+                        "free_seats": 0,
+                        "price": 87448,
+                        "amenities": [
+                            "not_near_wc",
+                            "near_window"
+                        ]
+                    },
+                    {
+                        "id": "\u04212",
+                        "name": "2 \u043a\u043b\u0430\u0441",
+                        "free_seats": 0,
+                        "price": 48926,
+                        "amenities": [
+                            "not_near_wc",
+                            "near_window"
+                        ]
+                    }
+                ],
+                "info_popup": null
+            },
+            "discount": null,
+            "custom_tag": null,
+            "monitoring": {
+                "allowed": true,
+                "auto_purchase": true
+            },
+            "is_departed": false
+        },
+        {
+            "id": 1168075,
+            "depart_at": 1747366320,
+            "arrive_at": 1747387680,
+            "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+            "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+            "stations_time_offset": 0,
+            "train": {
+                "id": 137,
+                "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+                "station_to": "\u0417\u0430\u043f\u043e\u0440\u0456\u0436 1",
+                "number": "732\u041a",
+                "type": 2,
+                "wagon_classes": [
+                    {
+                        "id": "\u04211",
+                        "name": "1 \u043a\u043b\u0430\u0441",
+                        "free_seats": 63,
+                        "price": 93855,
+                        "amenities": [
+                            "not_near_wc",
+                            "near_window"
+                        ]
+                    },
+                    {
+                        "id": "\u04212",
+                        "name": "2 \u043a\u043b\u0430\u0441",
+                        "free_seats": 23,
+                        "price": 48926,
+                        "amenities": [
+                            "not_near_wc",
+                            "near_window"
+                        ]
+                    }
+                ],
+                "info_popup": null
+            },
+            "discount": null,
+            "custom_tag": null,
+            "monitoring": {
+                "allowed": true,
+                "auto_purchase": true
+            },
+            "is_departed": false
+        },
+        {
+            "id": 1423631,
+            "depart_at": 1747401420,
+            "arrive_at": 1747423080,
+            "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+            "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+            "stations_time_offset": 0,
+            "train": {
+                "id": 1469,
+                "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+                "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+                "number": "734\u0414",
+                "type": 2,
+                "wagon_classes": [
+                    {
+                        "id": "\u04212",
+                        "name": "2 \u043a\u043b\u0430\u0441",
+                        "free_seats": 0,
+                        "price": 43479,
+                        "amenities": [
+                            "not_near_wc",
+                            "near_window"
+                        ]
+                    }
+                ],
+                "info_popup": null
+            },
+            "discount": null,
+            "custom_tag": null,
+            "monitoring": {
+                "allowed": true,
+                "auto_purchase": true
+            },
+            "is_departed": false
+        },
+        {
+            "id": 1423665,
+            "depart_at": 1747401420,
+            "arrive_at": 1747423080,
+            "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+            "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+            "stations_time_offset": 0,
+            "train": {
+                "id": 1468,
+                "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+                "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+                "number": "734\u041b",
+                "type": 2,
+                "wagon_classes": [
+                    {
+                        "id": "\u04211",
+                        "name": "1 \u043a\u043b\u0430\u0441",
+                        "free_seats": 0,
+                        "price": 87448,
+                        "amenities": [
+                            "not_near_wc",
+                            "near_window"
+                        ]
+                    },
+                    {
+                        "id": "\u04212",
+                        "name": "2 \u043a\u043b\u0430\u0441",
+                        "free_seats": 0,
+                        "price": 48926,
+                        "amenities": [
+                            "not_near_wc",
+                            "near_window"
+                        ]
+                    }
+                ],
+                "info_popup": null
+            },
+            "discount": null,
+            "custom_tag": null,
+            "monitoring": {
+                "allowed": true,
+                "auto_purchase": true
+            },
+            "is_departed": false
+        },
+        {
+            "id": 1666694,
+            "depart_at": 1747391100,
+            "arrive_at": 1747416960,
+            "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+            "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+            "stations_time_offset": 0,
+            "train": {
+                "id": 5303,
+                "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+                "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+                "number": "220\u041e",
+                "type": 0,
+                "wagon_classes": [
+                    {
+                        "id": "\u04211",
+                        "name": "1 \u043a\u043b\u0430\u0441",
+                        "free_seats": 174,
+                        "price": 70284,
+                        "amenities": [
+                            "not_near_wc",
+                            "near_window"
+                        ]
+                    }
+                ],
+                "info_popup": null
+            },
+            "discount": null,
+            "custom_tag": null,
+            "monitoring": {
+                "allowed": true,
+                "auto_purchase": true
+            },
+            "is_departed": false
+        },
+        {
+            "id": 1666790,
+            "depart_at": 1747391100,
+            "arrive_at": 1747416960,
+            "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+            "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+            "stations_time_offset": 0,
+            "train": {
+                "id": 4947,
+                "station_from": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441",
+                "station_to": "\u0414\u043d\u0456\u043f\u0440\u043e-\u0413\u043e\u043b",
+                "number": "220\u041a",
+                "type": 0,
+                "wagon_classes": [
+                    {
+                        "id": "\u041b",
+                        "name": "\u041b\u044e\u043a\u0441",
+                        "free_seats": 36,
+                        "price": 190062,
+                        "amenities": [
+                            "not_near_wc"
+                        ]
+                    }
+                ],
+                "info_popup": null
+            },
+            "discount": null,
+            "custom_tag": null,
+            "monitoring": {
+                "allowed": true,
+                "auto_purchase": true
+            },
+            "is_departed": false
+        }
+    ],
+    "with_transfer": null,
+    "monitoring": null
+}
