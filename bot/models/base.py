@@ -1,8 +1,6 @@
 import datetime
-from typing import Annotated
-import uuid
 
-from sqlalchemy import UUID, MetaData, func, DateTime, text
+from sqlalchemy import MetaData, func, DateTime
 from sqlalchemy.ext.asyncio import AsyncAttrs
 from sqlalchemy.orm import declarative_base, Mapped, mapped_column
 
