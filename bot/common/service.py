@@ -34,10 +34,8 @@ class Service(Generic[TModel]):
 
         logger.debug(f"Building query for {self.model.__name__}")
 
-        if options:
-            options = tuple(self.options)
-        elif options is None:
-            options = ()
+        if options is None:
+            options = tuple(self.options) if self.options else ()
         elif not isinstance(options, (Iterable, Sequence)):
             options = (options,)
 
