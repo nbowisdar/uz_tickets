@@ -1,8 +1,6 @@
 # syntax=docker/dockerfile:1
 
-ARG PYTHON_VERSION=3.12.3
-FROM python:${PYTHON_VERSION}-slim as base
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+FROM astral/uv:python3.12-bookworm-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1

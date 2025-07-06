@@ -1,17 +1,17 @@
 from contextlib import asynccontextmanager
-import logging
 from typing import Annotated
+
 from aiogram.types import Update
 from fastapi import FastAPI, Header
+from loguru import logger
 from starlette.middleware.cors import CORSMiddleware
 
-from bot.config import get_config
-from bot.misc import dp, bot
+from bot.core.config import get_config
+from bot.misc import bot, dp
 from bot.utils import setup_logging
 
 config = get_config()
 setup_logging(config)
-logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager

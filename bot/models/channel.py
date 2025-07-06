@@ -1,10 +1,7 @@
-from sqlalchemy.orm import Mapped
-from bot.models.base import Base
-from bot.models.fields import uuid_pk, chat_id_bigint
+from bot.models.base import Base, big_int_pk
 
 
-class Channel(Base):
-    __tablename__ = "channels"
-    id: Mapped[uuid_pk]
-    name: Mapped[str]
-    chat_id: Mapped[chat_id_bigint]
+class Channel(Base, table=True):
+    id: big_int_pk
+    name: str
+    chat_id: int

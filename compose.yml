@@ -21,7 +21,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=notify_bot
+      - POSTGRES_DB=bot
       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
     expose:
       - 5432

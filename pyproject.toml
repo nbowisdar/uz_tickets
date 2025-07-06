@@ -18,6 +18,9 @@ dependencies = [
     "redis>=5.2.0",
     "ruff>=0.7.1",
     "sqlalchemy[asyncio]>=2.0.36",
+    "loguru>=0.7.3",
+    "sqlmodel>=0.0.24",
+    "psycopg[binary]>=3.2.9",
 ]
 
 [tool.uv]

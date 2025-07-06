@@ -1,13 +1,33 @@
-from sqlalchemy.orm import Mapped, mapped_column
-from bot.models.base import Base
-from bot.models.fields import uuid_pk, chat_id_bigint
+from typing import Literal
+
+from sqlmodel import Field, Relationship
+
+from .base import Base, big_int_pk
+
+status: Literal["pending", "success", "error", "cancelled"]
 
 
-class User(Base):
-    __tablename__ = "users"
-    id: Mapped[uuid_pk]
-    chat_id: Mapped[chat_id_bigint]
-    username: Mapped[str | None] = mapped_column(nullable=True, unique=True)
-    first_name: Mapped[str]
-    last_name: Mapped[str | None]
-    blocked: Mapped[bool] = mapped_column(default=False, server_default="false")
+class User(Base, table=True):
+    id: big_int_pk
+
+    username: str | None = Field(nullable=True, unique=True)
+    first_name: str
+    last_name: str | None
+    balance: int = 0
+    language_code: str | None = None
+    referrer: str | None = None
+
+    is_admin: bool = False
+    is_suspicious: bool = False
+    is_block: bool = False
+    is_premium: bool = False
+
+    orders: list["Order"] = Relationship(back_populates="user")
+
+
+class Order(Base, table=True):
+    id: big_int_pk
+
+    user_id: int | None = Field(default=None, foreign_key="user.id")
+    user: User | None = Relationship(back_populates="orders")
+    status: str = "pending"

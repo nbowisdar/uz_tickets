@@ -1,14 +1,15 @@
-import logging
-
+from typing import Iterable
 from aiogram import Router
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from aiogram_dialog import AccessSettings, DialogManager, StartMode
+from dishka import FromDishka
+from loguru import logger
+from sqlmodel import Session
 
-from bot.config import get_config
+from bot.core.config import get_config
+from bot.ioc import DBSession
 from bot.states import Menu
-
-logger = logging.getLogger(__name__)
 
 config = get_config()
 commands_router = Router()
@@ -26,11 +27,11 @@ async def command_start_handler(
     )
 
 
-@commands_router.message(Command("photo_id"))
-async def photo_id(message: Message):
-    if not message.reply_to_message:
-        return await message.answer("Reply to a photo message with this command.")
-    logger.info(f"Command /photo_id from {message.from_user.id}")  # type: ignore
-    await message.answer(
-        f"Photo id: <code>{message.reply_to_message.photo[-1].file_id}</code>"  # type: ignore
-    )
+@commands_router.message(Command("foo"))
+async def foo(message: Message, foo: FromDishka[str]) -> None:
+    await message.answer(foo)
+
+
+@commands_router.message(Command("db"))
+async def test(message: Message, session: FromDishka[Iterable[Session]]) -> None:
+    await message.answer("ok")

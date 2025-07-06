@@ -32,6 +32,9 @@ class Config(BaseSettings):
         "http://localhost:8000",
     ]
 
+    RATE_LIMIT: float = 0.5
+    ADMIN_PASS: str = "foo"
+
     # Postgres
     POSTGRES_DSN: PostgresDsn
     # Redis
@@ -49,3 +52,7 @@ class Config(BaseSettings):
 @lru_cache
 def get_config() -> Config:
     return Config()  # type: ignore
+
+config = get_config()
+print(config.POSTGRES_DSN, "POSTGRES_DSN")
+print(config.REDIS_DSN)
