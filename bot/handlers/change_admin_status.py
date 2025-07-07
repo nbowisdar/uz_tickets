@@ -23,7 +23,7 @@ class SG(StatesGroup):
 @router.message(Command(commands="upgrade_to_admin"))
 async def upgrade_to_admin(message: Message, state: FSMContext) -> None:
     await state.set_state(SG.admin_secret)
-    await message.answer(f"Enter secret code")
+    await message.answer("Enter secret code")
 
 
 @router.message(SG.admin_secret)

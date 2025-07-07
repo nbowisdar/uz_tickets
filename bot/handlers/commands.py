@@ -1,6 +1,7 @@
-from typing import Iterable
 from aiogram import Router
 from aiogram.filters import Command, CommandStart
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import Message
 from aiogram_dialog import AccessSettings, DialogManager, StartMode
 from dishka import FromDishka
@@ -8,14 +9,13 @@ from loguru import logger
 from sqlmodel import Session
 
 from bot.core.config import get_config
-from bot.ioc import DBSession
 from bot.states import Menu
 
 config = get_config()
-commands_router = Router()
+router = Router()
 
 
-@commands_router.message(CommandStart())
+@router.message(CommandStart())
 async def command_start_handler(
     message: Message, dialog_manager: DialogManager
 ) -> None:
@@ -27,11 +27,20 @@ async def command_start_handler(
     )
 
 
-@commands_router.message(Command("foo"))
-async def foo(message: Message, foo: FromDishka[str]) -> None:
-    await message.answer(foo)
+class SG(StatesGroup):
+    order = State()
 
 
-@commands_router.message(Command("db"))
-async def test(message: Message, session: FromDishka[Iterable[Session]]) -> None:
+@router.message(Command("new_order"))
+async def _(message: Message, state: FSMContext, session: FromDishka[Session]) -> None:
+    print("Do smth")
+    await state.set_state(SG.order)
+    await message.answer("ok")
+
+
+@router.message(SG.order)
+async def _(message: Message, state: FSMContext, session: FromDishka[Session]) -> None:
+    print("Do smth")
+
+    await state.clear()
     await message.answer("ok")

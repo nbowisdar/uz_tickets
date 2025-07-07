@@ -8,7 +8,6 @@ from loguru import logger
 from bot.core.config import get_config
 from bot.dialogs.menu.dialog import menu_dialog
 from bot.handlers import get_handlers_router
-from bot.handlers.commands import commands_router
 from bot.ioc import DepsProvider
 from bot.middlewares import register_middlewares
 from bot.misc import bot, dp
@@ -26,8 +25,7 @@ def register_dialogs(router: Router):
     """
     Register all dialogs in the router
     """
-    router.include_router(commands_router)
-    # dp.include_router(get_handlers_router())
+    dp.include_router(get_handlers_router())
     router.include_router(menu_dialog)
 
 
