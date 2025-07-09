@@ -1,4 +1,4 @@
-from bot.models.base import Base, big_int_pk
+from src.bot.models.base import Base, big_int_pk
 
 
 class Channel(Base, table=True):

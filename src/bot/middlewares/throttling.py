@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Any
 from aiogram import BaseMiddleware
 from cachetools import TTLCache
 
-from bot.core.config import config
+from src.bot.core.config import config
 
 if TYPE_CHECKING:
     from collections.abc import Awaitable, Callable

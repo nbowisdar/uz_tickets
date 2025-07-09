@@ -5,15 +5,12 @@ from dishka import Provider, Scope, provide
 from loguru import logger
 from sqlmodel import Session
 
-from bot.core.config import config
-from bot.database.db import get_session
-from bot.services.user import add_user, user_exists
-from bot.utils.command import find_command_argument
+from src.bot.core.config import config
+from src.bot.database.db import get_session
+from src.bot.services.user import add_user, user_exists
+from src.bot.utils.command import find_command_argument
 
-# @dataclass
-# class Types:
-# DBSession = Generator[Session, None, None]
-# DBSession = Iterable[int]
+
 DBSession = Iterable[Session]
 
 

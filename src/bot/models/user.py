@@ -27,6 +27,8 @@ class User(Base, table=True):
 
 class Order(Base, table=True):
     id: big_int_pk
+    train: str
+    max_price: int  # 400_00 - penny
 
     user_id: int | None = Field(default=None, foreign_key="user.id")
     user: User | None = Relationship(back_populates="orders")

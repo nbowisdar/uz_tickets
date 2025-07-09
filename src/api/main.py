@@ -6,9 +6,9 @@ from fastapi import FastAPI, Header
 from loguru import logger
 from starlette.middleware.cors import CORSMiddleware
 
-from bot.core.config import get_config
-from bot.misc import bot, dp
-from bot.utils import setup_logging
+from src.bot.core.config import get_config
+from src.bot.misc import bot, dp
+from src.bot.utils import setup_logging
 
 config = get_config()
 setup_logging(config)

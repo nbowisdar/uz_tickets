@@ -8,9 +8,9 @@ from aiogram.types import Message
 from dishka import FromDishka
 from sqlmodel import Session
 
-from bot.core.config import config
-from bot.filters.admin import AdminFilter
-from bot.services.user import change_user_admin_status
+from src.bot.core.config import config
+from src.bot.filters.admin import AdminFilter
+from src.bot.services.user import change_user_admin_status
 
 router = Router(name="upgrade_to_admin")
 

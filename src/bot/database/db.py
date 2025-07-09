@@ -4,7 +4,7 @@ from typing import Generator
 from loguru import logger
 from sqlmodel import Session, create_engine
 
-from bot.core.config import get_config
+from src.bot.core.config import get_config
 
 config = get_config()
 engine = create_engine(str(config.POSTGRES_DSN), echo=config.DEBUG)

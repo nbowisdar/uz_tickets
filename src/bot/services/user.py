@@ -3,7 +3,7 @@ from loguru import logger
 from sqlalchemy import select
 from sqlmodel import Session, update
 
-from bot.models.user import User
+from src.bot.models.user import User
 
 
 def is_admin(session: Session, user_id: int) -> bool:

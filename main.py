@@ -3,10 +3,10 @@ import asyncio
 import uvicorn
 from loguru import logger
 
-from api import app
-from bot.core.config import get_config
-from bot.main import start_pooling
-from bot.utils import setup_logging
+from src.api import app
+from src.bot.core.config import get_config
+from src.bot.main import start_pooling
+from src.bot.utils import setup_logging
 
 config = get_config()
 setup_logging(config)

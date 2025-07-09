@@ -3,7 +3,7 @@ from aiogram.types import Message
 from dishka.integrations.aiogram import FromDishka, inject
 from sqlmodel import Session
 
-from bot.services.user import is_admin
+from src.bot.services.user import is_admin
 
 
 class AdminFilter(BaseFilter):
