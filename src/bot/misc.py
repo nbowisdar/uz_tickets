@@ -3,14 +3,14 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.base import DefaultKeyBuilder
-from aiogram.fsm.storage.redis import RedisStorage
+from aiogram.fsm.storage.memory import MemoryStorage
 
 from src.bot.core.config import get_config
 
 config = get_config()
 
 key_builder = DefaultKeyBuilder(with_destiny=True)
-storage = RedisStorage.from_url(str(config.REDIS_DSN), key_builder=key_builder)
+storage = MemoryStorage()
 dp = Dispatcher(storage=storage)
 
 # Bot

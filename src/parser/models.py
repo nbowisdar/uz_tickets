@@ -13,7 +13,7 @@ def to_human_time(timestamp: int) -> str:
     dt_ukraine = dt_object.astimezone(ukraine_tz)
 
     # Format the datetime to desired string format
-    formatted_date = dt_ukraine.strftime("%d.%m.%Y at %H:%M")
+    formatted_date = dt_ukraine.strftime("%d.%m.%Y  %H:%M")
 
     return formatted_date
 
@@ -70,10 +70,10 @@ class Direct(_Time):
 
     def show_message(self) -> str:
         msg = f"""
-Відправлення: {self.depart_at_human}
-Прибуття: {self.arrive_at_human} 
-"""
-        msg += self.train.show_message()
+{self.train.number}. Вільних місць: {self.train.total_free_seats}
+{self.depart_at_human} - {self.arrive_at_human}
+        """
+        # msg += self.train.show_message()
         return msg
 
     @property
@@ -94,13 +94,11 @@ class Transfer(BaseModel):
 
     def show_message(self, with_free_seats=True) -> str:
         msg = f"""
-Станція відправлення: {self.station_from}
-Станція прибуття: {self.station_to}
+{self.station_from} - {self.station_to}
 Всього потягів: {len(self.direct)}
 """
         for d in self.direct:
-            if with_free_seats and d.train.total_free_seats > 0:
-                msg += d.show_message()
-            else:
-                msg += d.show_message()
+            if not with_free_seats and d.train.total_free_seats == 0:
+                continue
+            msg += d.show_message()
         return msg

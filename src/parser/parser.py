@@ -32,14 +32,14 @@ def get_headers() -> dict:
 
 
 class Parser:
-    def __init__(self, url: str):
+    def __init__(self, url: str, callback: Awaitable[Callable] = None):
         self.url = url
         self.api_url = convert_booking_url_to_api_url(url)
         self.api_interval = 5
         self.is_active = False
         self.headers = get_headers()
         self.prev_transfer: Transfer = None
-        self.cb: Awaitable[Callable] = None
+        self.callback: Awaitable[Callable] = callback
 
     async def update_headers(self):
         async with async_playwright() as p:
@@ -71,6 +71,7 @@ class Parser:
                 await page.wait_for_load_state("networkidle")
             except Exception as e:
                 print(f"Error navigating to page: {e}")
+                await self.update_headers()
             finally:
                 await browser.close()
 
@@ -99,8 +100,11 @@ class Parser:
         while self.is_active:
             try:
                 self.prev_transfer = await self.get_api()
-                if self.cb:
-                    await self.cb(self.prev_transfer)
+                if self.callback:
+                    is_done = await self.callback(self.prev_transfer)
+                    if is_done:
+                        print("exiting callback")
+                        break
                 await asyncio.sleep(self.api_interval)
             except KeyboardInterrupt:
                 self.is_active = False
@@ -111,7 +115,7 @@ class Parser:
 
 
 async def main():
-    url = "https://booking.uz.gov.ua/search-trips/2210700/2200001/list?startDate=2025-07-08"
+    url = "https://booking.uz.gov.ua/search-trips/2210700/2200001/list?startDate=2025-07-14"
     parser = Parser(url)
     await parser.start()
 
