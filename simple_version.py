@@ -1,5 +1,4 @@
 import asyncio
-import hashlib
 import json
 from pathlib import Path
 
@@ -40,7 +39,9 @@ async def fetch_page(url: str) -> str:
     async with Stealth().use_async(async_playwright()) as p:
         browser = await p.chromium.launch()
         page = await browser.new_page()
-        await page.goto(url, timeout=60000, wait_until="load")
+        await page.goto(url, wait_until="load")
+        print(f"Loaded {url}")
+        await asyncio.sleep(5)
         content = await page.content()
         await browser.close()
     return content
@@ -52,12 +53,13 @@ async def monitor_loop():
             try:
                 html = await fetch_page(url)
                 print(f"Checked {url}")
-                new_hash = hashlib.sha256(html.encode()).hexdigest()
-                old_hash = state["urls"][url].get("hash")
+                # new_hash = hashlib.sha256(html.encode()).hexdigest()
+                # old_hash = state["urls"][url].get("hash")
 
-                if new_hash != old_hash:
+                # TODO check if
+                if "Прямих рейсів не знайшлося" not in html:
                     print(f"Change detected at {url}")
-                    state["urls"][url]["hash"] = new_hash
+                    # state["urls"][url]["hash"] = new_hash
                     state["snapshots"][url] = html
                     save_data(state)
                     await bot.send_message(
@@ -128,6 +130,7 @@ async def cmd_get(message: types.Message):
     path = Path("snapshot.html")
     path.write_text(html, encoding="utf-8")
     await message.answer_document(FSInputFile(path))
+    path.unlink()
 
 
 # ========= MAIN =========
