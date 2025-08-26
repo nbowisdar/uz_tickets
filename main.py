@@ -56,12 +56,10 @@ async def monitor_loop():
                     html: str = await fetch_page(page, url)
                     print(f"Checked {url}")
 
-                    state["snapshots"][url] = html
-                    print(html)
-                    save_data(state)
-
                     if "потяг від" in html:
                         print(f"Change detected at {url}")
+                        state["snapshots"][url] = html
+                        save_data(state)
                         await bot.send_message(
                             state["urls"][url]["owner"], f"🔄 Change detected at {url}"
                         )
